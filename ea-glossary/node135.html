@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta8 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Selection/ selection operator</TITLE>
+<META NAME="description" CONTENT="Selection/ selection operator">
+<META NAME="keywords" CONTENT="def-engl-html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta8">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="def-engl-html.css">
+
+<LINK REL="next" HREF="node136.html">
+<LINK REL="previous" HREF="node134.html">
+<LINK REL="up" HREF="node128.html">
+<LINK REL="next" HREF="node136.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1600"
+  HREF="node136.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1598"
+  HREF="node128.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1592"
+  HREF="node134.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html1601"
+  HREF="node136.html">Selection pool</A>
+<B> Up:</B> <A NAME="tex2html1599"
+  HREF="node128.html">S</A>
+<B> Previous:</B> <A NAME="tex2html1593"
+  HREF="node134.html">Search space</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000018700000000000000"></A><A NAME="sele"></A>
+<BR>
+Selection/ 
+selection operator
+</H3>
+necessary operator in EA, which, depending on the 
+<A HREF="node45.html#fit">fitness</A>  
+or the 
+<A HREF="node95.html#zie">objective function</A> 
+values, respectively, decides on the reproduction of the individuals.
+Selection gives a direction to evolution, it guides the search 
+(e.g., in the sense of optimization or 
+<A HREF="node5.html#mel">amelioration</A>). 
+It conserves successful states, but at the same time it reduces the 
+<A HREF="node32.html#div">diversity</A> 
+of the population. In this sense, selection is the antagonist to
+<A HREF="node152.html#var">variation</A>, which
+produces diversity. If the selection method guarantees the 
+conservation of the information of the best individual, it is called
+``elitist''. Popular selection methods are truncation selection with
+the variants
+<A HREF="node108.html#plu">``<IMG
+ WIDTH="16" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$+$">''</A>- 
+and 
+<A HREF="node20.html#kom">``<IMG
+ WIDTH="8" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.gif"
+ ALT="$,$">''</A>-selection,
+<A HREF="#tur">tournament selection</A>,
+<A HREF="node47.html#fitne">fitness-proportionate selection</A> 
+(realized as roulette selection or stochastic universal sampling) and 
+their transformed versions with ranking
+(<A HREF="node121.html#ran">ranking-based selection</A>), 
+as well as Boltzmann-selection.
+All of these selection methods reinsert the individuals into the current 
+population after selection, i.e., individuals can be selected more than once.
+<BR>
+<BR>
+<P>
+<BR><HR>
+<ADDRESS>
+Hans-Georg Beyer
+2002-02-25
+</ADDRESS>
+</BODY>
+</HTML>
