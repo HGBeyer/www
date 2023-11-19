@@ -1,0 +1,56 @@
+(* ************************************************************************* *)
+(* This is a simple MATHEMATICA implementation of the (mu/mu_I, lambda)-ES   *)
+(* as discussed in http://www.scholarpedia.org/article/Evolution_Strategies  *)
+(* The code presented below should be regarded as a skeleton only            *)
+(* Note, the code presented is to be used under GNU General Public License   *)
+(* Author: Hans-Georg Beyer                                                  *)
+(* Email: Hans-Georg.Beyer_AT_fhv.at                                         *)
+(* ************************************************************************* *)
+
+(* function to be minimized *)
+f[x_] := Module[ {n},  n = Dimensions[x][[1]]; (* n - search space dimension *)
+                 (* here comes whatever you want to minimize: *)
+                  Sum[ i*x[[i]]^2, {i, 1, n}] ]
+
+(* ************************************************************************* *)
+(* definition of the specific strategy and problem size: *)
+(* ************************************************************************* *)
+mu = 3;                  (* number of parents *)
+lambda = 12;             (* number of offspring *)
+yInit = Table[1, {30}];  (* initial parent vector *)
+sigmaInit = 1;           (* initial global mutation strength sigma *)
+sigmaMin = 10^-10;       (* ES stops when sigma is smaller than sigmaMin *)
+
+(* ************************************************************************* *)
+(* initialization *)
+(* ************************************************************************* *)
+<<Statistics`NormalDistribution`
+norm = NormalDistribution[0, 1];
+n = Dimensions[yInit][[1]]; (* determine search space dimensionality n *)
+tau = 1/Sqrt[2*n];          (* self-adaptation learning rate *)
+(* initializing individual population: *)
+Individual = {f[yInit], sigmaInit, yInit};
+ParentPop = Table[Individual, {mu}];
+offspring = {{}, {}, {}};
+
+(* ************************************************************************* *)
+(* here starts evolution loop of (mu/mu_I, lambda)-sigmaSA-ES *)
+(* ************************************************************************* *)
+While[ True, 
+  OffspringPop = Table[ 
+    ( offspring[[2]] = 
+       Sum[ParentPop[[m, 2]], {m, 1, mu}] / mu *            (* recombine and *)
+        Exp[tau*Random[norm]];                   (* mutate mutation strength *)
+      offspring[[3]] = 
+       Sum[ParentPop[[m, 3]], {m, 1, mu}] / mu +     (* recombine and mutate *)
+        offspring[[2]] * Table[ Random[norm], {n}];     (* object parameters *)
+      offspring[[1]] = f[offspring[[3]]];               (* determine fitness *)
+      offspring
+    ), {lambda} ];
+  ParentPop = Take[Sort[OffspringPop], mu];  (* select the mu best offspring *)
+  Print["f_Best = ", ParentPop[[1, 1]]];             (* display best fitness *)
+  If[ ParentPop[[1, 2]] < sigmaMin, Break[] ] ]
+(* ************************************************************************* *)
+(* ParentPop[[1,3]] contains an approximation of the optimizer of the        *)
+(* function "f[y]" to be optimized                                           *)
+(* ************************************************************************* *)

@@ -1,0 +1,66 @@
+(* ************************************************************************* *)
+(* This is a simple MATHEMATICA implementation of the CMA-ES as discussed in *)
+(* http://www.scholarpedia.org/article/Evolution_Strategies                  *)
+(* The code presented below should be regarded as a skeleton only            *)
+(* Note, the code presented is to be used under GNU General Public License   *)
+(* Author: Hans-Georg Beyer                                                  *)
+(* Email: Hans-Georg.Beyer_AT_fhv.at                                         *)
+(* ************************************************************************* *)
+
+(* function to be minimized *)
+f[x_] := Module[ {n},  n = Dimensions[x][[1]]; (* n - search space dimension *)
+                  (* here comes whatever you want to minimize: *)
+                  Sum[ i*x[[i]]^2, {i, 1, n}] ]
+
+(* ************************************************************************* *)
+(* definition of the specific strategy and problem size: *)
+(* ************************************************************************* *)
+mu = 3;                           (* number of parents *)
+lambda = 12;                      (* number of offspring *)
+yInit = Table[1, {30}];           (* initial parent vector *)
+sigmaInit = 1;                    (* initial global mutation strength sigma *)
+sigmaMin = 10^-10;                (* ES stops if sigma < sigmaMin *)
+
+(* ************************************************************************* *)
+(* initialization *)
+(* ************************************************************************* *)
+<<Statistics`NormalDistribution`
+norm = NormalDistribution[0, 1];
+n = Dimensions[yInit][[1]];       (* determine search space dimensionality n *)
+tau = Sqrt[n]; tauC = n^2; tauSigma = Sqrt[n];  (* time constants *)
+Cov = IdentityMatrix[n];          (* initial covariance matrix *)
+sigma = sigmaInit;                (* initial sigma *)
+s = Table[0, {n}];                (* set cumulation vector to zero *)
+sSigma = Table[0, {n}];           (* set cumulation vector to zero *)
+(* initializing individual population: *)
+Individual = {f[yInit], yInit, yInit, yInit};
+ParentPop = Table[Individual, {mu}];
+yParent = yInit;                  (* initial centroid parent *)
+offspring = {{}, {}, {}, {}};     (* reserve place for offspring components *)
+
+(* ************************************************************************* *)
+(* here starts evolution loop of CMA-ES *)
+(* ************************************************************************* *)
+While[ True, 
+  SqrtCov = Transpose[CholeskyDecomposition[Cov]];     (* square root of Cov *)
+  OffspringPop = Table[                         (* generate lambda offspring *)
+    ( offspring[[4]] = Table[ Random[norm], {n}];              (* line (L1a) *)
+      offspring[[3]] = sigma*(SqrtCov.offspring[[4]]);         (* line (L1a) *)
+      offspring[[2]] = yParent + offspring[[3]];               (* line (L1b) *)
+      offspring[[1]] = f[offspring[[2]]];   (* determine fitness, line (L1c) *)
+      offspring                                        (* offspring complete *)
+    ), {lambda} ];
+  ParentPop = Take[Sort[OffspringPop], mu];         (* sort and take mu best *)
+  Print["f_Best = ", ParentPop[[1, 1]]];            (* display best fitness *)
+  Recombinant = Sum[ParentPop[[m]], {m, 1, mu}]/mu; (* recombine parents *)
+  yParent = Recombinant[[2]];                       (* centroid parent *)
+  s = (1-1/tau)*s + Sqrt[mu/tau*(2-1/tau)]*Recombinant[[3]]/sigma; (* (L3) *)
+  Cov = (1-1/tauC)*Cov + Outer[Times, (s/tauC), s];                (* (L4) *)
+  Cov = (Cov + Transpose[Cov])/2;                   (* enforce symmetry *)
+  sSigma = (1-1/tauSigma)*sSigma + 
+            Sqrt[mu/tauSigma*(2-1/tauSigma)]*Recombinant[[4]];     (* (L5) *)
+  sigma = sigma*Exp[(sSigma.sSigma - n)/(2*n*Sqrt[n])];            (* (L6) *)
+  If[ sigma < sigmaMin, Break[] ] ]                 (* termination condition *)
+(* ************************************************************************* *)
+(* yParent contains an approximation of the optimizer of the function "f[y]" *)
+(* ************************************************************************* *)
