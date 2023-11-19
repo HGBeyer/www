@@ -1,0 +1,311 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//DE">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>S</TITLE>
+<META NAME="description" CONTENT="S">
+<META NAME="keywords" CONTENT="richtlinien">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="richtlinien.css">
+<LINK REL="next" HREF="node22.html">
+<LINK REL="previous" HREF="node20.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node22.html">
+</HEAD>
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html305"
+ HREF="node22.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="http://www.cs.uni-dortmund.de/icons/l2h98.1p1//next_motif.gif"></A> 
+<A NAME="tex2html303"
+ HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="http://www.cs.uni-dortmund.de/icons/l2h98.1p1//up_motif.gif"></A> 
+<A NAME="tex2html297"
+ HREF="node20.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="http://www.cs.uni-dortmund.de/icons/l2h98.1p1//previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html306"
+ HREF="node22.html">T</A>
+<B> Up:</B> <A NAME="tex2html304"
+ HREF="node3.html">Begriffe und Definitionen</A>
+<B> Previous:</B> <A NAME="tex2html298"
+ HREF="node20.html">R</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000318000000000000000">
+S</A>
+</H2>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Schrittweite<A NAME="sch">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>Erwartungswert der Länge einer/s Mutation/Schrittes im Suchraum</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Schema<A NAME="sche">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>in GA, Begriff, der aus mathematischer Sicht synonym für Unterraum des 
+Raumes <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$\{0,1\}^l$">
+(Repräsentationsraum) der Bitketten der Länge <I>l</I> steht. 
+Unterräume der Dimension <I>l</I> - <I>o</I> werden als Schemata der Ordnung 
+<I>o</I> bezeichnet.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>&nbsp;</TD>
+</TR>
+</TABLE>
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Schema-Theoreme<A NAME="schem">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>Theoreme, auf deren Grundlage Erklärungsansätze für die Funktionsweise 
+der GA vorgeschlagen wurden. Die Sch.T. liefern untere Schranken 
+für die erwartete Besetzungshäufigkeit der 
+<A HREF="node21.html#sche">Schemata</A>. 
+Die Nützlichkeit der Sch.T. wird 
+zunehmend in Frage gestellt, da sie auf unbegründeten bzw. unrealistischen 
+Annahmen basieren, geringen Vorhersagewert haben und keine Aussagen über die 
+<A HREF="node18.html#per">Performance</A> 
+der GA erlauben.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Selbstadaptation<A NAME="sel">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>in ES/EP (im engeren Sinne), Standardverfahren zum Erlangen 
+<A HREF="node21.html#selb">selbstadaptiven Verhaltens</A> 
+in ES- und EP-Algorithmen. S. wird realisiert 
+durch die Evolution eines sekundären Satzes von Parametern, den 
+sogenannten 
+(<A HREF="node8.html#end">endogenen</A>) 
+Strategieparametern, die 
+gewisse statistische Eigenschaften der (Objektparameter-) Variationsoperatoren 
+parametrisieren (z.B. 
+<A HREF="node15.html#mutat">Mutationsstärke</A>, 
+i.d.R. 
+Standardabweichung, oder Kovarianzmatrix 
+des 
+<A HREF="node15.html#mut">Mutation</A>soperators).
+Jedes Individuum enthält neben dem 
+Objekt- einen 
+eigenen Strategieparametersatz der <EM> zusammen</EM> mit dem Objektparametersatz 
+selektiert wird. Die Mutationsoperatoren wirken zuerst auf die 
+Strategieparameter, die dann ihrerseits die Mutation der Objektparameter 
+steuern.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+selbstadaptives Verhalten<A NAME="selb">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>Eigenschaft eines EA, insb. gewisser Variationsoperatoren, ohne 
+äußere Kontrolle, also autonom, sich den jeweiligen Verhältnissen in der 
+<A HREF="node9.html#fitn">Fitnesslandschaft</A> 
+bzw. im Suchraum so anzupassen, daß der 
+EA gewisse, 
+zu definierende Performanceeigenschaften zeigt (Alternative: Fremdadaptation, 
+z.B. 
+<A HREF="node8.html#ein">1/5-Regel</A>).</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Selektion/<A NAME="sele">&#160;</A> <BR>
+Selektionsoperator</TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>notwendiger Operator im EA, der abhängig von der Fitness, bzw. der 
+aktuellen Zielfunktionswerte, über 
+die Reproduktion der Individuen entscheidet. Die Selektion 
+gibt der Evolution die Richtung (z.B. im Sinne einer Optimierung), sie  
+konserviert gute Zustände, reduziert jedoch die 
+<A HREF="node7.html#div">Diversität</A> 
+der Population, 
+sie ist somit Antagonist zur 
+<A HREF="node24.html#var">Variation</A>, 
+die Diversität erzeugt. 
+S., die die Information des besten Individuums mit Sicherheit konserviert, 
+wird als ,,elitäre S.`` bezeichnet. 
+Gängige Selektionsarten sind die Abschneideselektion (Zuchtauswahl) mit den 
+Varianten 
+<A HREF="node18.html#plu">``+``</A>- 
+und 
+<A HREF="node13.html#kom">``,``</A>-Selektion, 
+<A HREF="node22.html#tur">Turnierselektion</A>,
+<A HREF="node9.html#fitne">fitness-proportionale Selektion</A> 
+(realisiert als Roulett-Selektion bzw. <EM> stochastic universal sampling</EM>) und 
+deren transformierte Versionen mit Rangbildung 
+(<A HREF="node20.html#ran">rangbasierte Selektion</A>) 
+sowie Boltzmann-Selektion. 
+Alle hiergenannten S. arbeiten mit ,,Zurücklegen``, d.h. 
+Individuen können mehrfach selektiert werden.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Selektionsdruck<A NAME="selek">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>Verhältnis der 
+Wahrscheinlichkeit der Auswahl des besten Individuums zur
+durchschnittlichen Selektionswahrscheinlichkeit aller Individuen des 
+<A HREF="node21.html#selekt">Selektionspool</A>s</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Selektionspool<A NAME="selekt">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>Bereich der Population, der alle Individuen enthält,
+die zusammen zur Auswahl der Reproduktionspartner 
+(<A HREF="node8.html#elt">Eltern</A>) 
+in Betracht gezogen werden. Bei einer 
+<A HREF="node18.html#pan">panmiktische Population</A> 
+ist dies die gesamte Population, bei der Verwendung des 
+<A HREF="node20.html#reg">regionalen Populationsmodells</A> 
+jeweils eine 
+<A HREF="node23.html#unt">Unterpopulation</A> 
+und beim 
+<A HREF="node14.html#lok">lokalen Populationsmodell</A> 
+die lokale Nachbarschaft.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Skalierbarkeit<A NAME="ska">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>(nicht immer zu erfüllende) Forderung, daß ein EA oder ein Variationsoperator 
+derart parametrisiert werden kann, daß er für beliebige 
+<A HREF="node18.html#pro">Problemgrößen</A>  
+(<A HREF="node21.html#suchr">Suchraumdimension</A>) 
+hinreichende 
+<A HREF="node18.html#per">Performance</A> 
+zeigt</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>&nbsp;</TD>
+</TR>
+</TABLE>
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Skalierungsfunktion<A NAME="skal">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>auch Fitnessskalierung, 
+Methoden zur Transformation von Zielfunktionswerten in Fitnesswerte 
+(<A HREF="node21.html#sele">Selektionsoperator</A>). 
+Insbesondere bei 
+<A HREF="node9.html#fitne">fitness-proportionaler Selektion</A> 
+muß sichergestellt werden, daß negativen Zielfunktionswerten positive 
+Fitnesswerte zugeordnet werden. 
+Varianten: 
+<A HREF="node20.html#ran">rangbasierte Selektion</A>, 
+Boltzmann-Selektion</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>&nbsp;</TD>
+</TR>
+</TABLE>
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+stationärer EA<A NAME="stat">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>besser, steady-state EA, EA mit gleitender Generationenfolge, es gibt keine 
+Nachkommenpopulation im eigentlichen Sinne, vielmehr werden Nachkommen 
+sukzessive generiert und die schlechtesten Individuen entfernt, so daß die 
+Populationsgröße konstant bleibt 
+(<A HREF="node10.html#gener">Generationslücke</A>). 
+Typisches Beispiel: <IMG
+ WIDTH="54" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$(\mu + 1)$">-ES.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Strategieparameter<A NAME="stra">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>Parameter, die das Verhalten des EA beeinflussen, bzw. den EA näher 
+definieren, wie z.B. 
+<A HREF="node18.html#popu">Populationsgröße</A>, 
+<A HREF="node15.html#muta">Mutations</A>- 
+und 
+<A HREF="node6.html#cros">Crossoverraten</A>.  
+Man unterscheidet 
+<A HREF="node8.html#exo">exogene</A> 
+und 
+<A HREF="node8.html#end">endogene</A> 
+S. 
+Endogene S. werden 
+während der Evolution adaptiert (z.B. 
+<A HREF="node15.html#mutat">Mutationsstärke</A>), 
+wogegen die exogenen
+S. (z.B. Elternanzahl <IMG
+ WIDTH="14" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\mu$">,
+Nachkommenzahl <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\lambda$">,
+Mischungszahl <IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\rho$">,
+Lernparameter) konstant gehalten werden. Die Adaptation der endogenen S. 
+erfolgt durch statistische Regelverfahren (z.B. 
+<A HREF="node8.html#ein">1/5-Regel</A>, 
+<A HREF="node8.html#ent">entstochastisierte ES</A>), 
+<A HREF="node15.html#met">Meta-EA</A> 
+oder evolutiv durch 
+<A HREF="node21.html#sel">Selbstadaptation</A>.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>&nbsp;</TD>
+</TR>
+</TABLE>
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Suchoperator<A NAME="suc">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>Operator, der im Suchraum arbeitet, 
+<A HREF="node10.html#geneti">genetische Operatoren</A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Suchraum<A NAME="such">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>Definitionsmenge des Objektparametersatzes 
+(<A HREF="node17.html#obj">Objektparameter</A>)</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Suchraumdimension<A NAME="suchr">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>Anzahl der Freiheitsgrade des Objektparametersatzes in unbeschränkten und 
+kontinuierlichen Suchräumen (z.B. <I>n</I>-dimensionaler reellwertiger Suchraum 
+R<SUP><I>n</I></SUP>)
+<P></TD>
+</TR>
+</TABLE>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html305"
+ HREF="node22.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="http://www.cs.uni-dortmund.de/icons/l2h98.1p1//next_motif.gif"></A> 
+<A NAME="tex2html303"
+ HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="http://www.cs.uni-dortmund.de/icons/l2h98.1p1//up_motif.gif"></A> 
+<A NAME="tex2html297"
+ HREF="node20.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="http://www.cs.uni-dortmund.de/icons/l2h98.1p1//previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html306"
+ HREF="node22.html">T</A>
+<B> Up:</B> <A NAME="tex2html304"
+ HREF="node3.html">Begriffe und Definitionen</A>
+<B> Previous:</B> <A NAME="tex2html298"
+ HREF="node20.html">R</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Hans-Georg Beyer</I>
+<BR><I>2001-06-13</I>
+</ADDRESS>
+</BODY>
+</HTML>

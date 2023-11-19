@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//DE">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>R</TITLE>
+<META NAME="description" CONTENT="R">
+<META NAME="keywords" CONTENT="richtlinien">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="richtlinien.css">
+<LINK REL="next" HREF="node21.html">
+<LINK REL="previous" HREF="node19.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node21.html">
+</HEAD>
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html295"
+ HREF="node21.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="http://www.cs.uni-dortmund.de/icons/l2h98.1p1//next_motif.gif"></A> 
+<A NAME="tex2html293"
+ HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="http://www.cs.uni-dortmund.de/icons/l2h98.1p1//up_motif.gif"></A> 
+<A NAME="tex2html287"
+ HREF="node19.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="http://www.cs.uni-dortmund.de/icons/l2h98.1p1//previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html296"
+ HREF="node21.html">S</A>
+<B> Up:</B> <A NAME="tex2html294"
+ HREF="node3.html">Begriffe und Definitionen</A>
+<B> Previous:</B> <A NAME="tex2html288"
+ HREF="node19.html">Q</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000317000000000000000">
+R</A>
+</H2>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Räuber-Beute-EA<A NAME="rau">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>Konzept für die evolutionäre Optimierung, welches einerseits der 
+Berücksichtigung mehrerer (konkurrierender) Teilziele 
+(<A HREF="node15.html#mul">multikriterielle Optimierung</A>) 
+auf natürliche Weise 
+entgegenkommt und andererseits die Effizienz auf Parallelrechnern verbessern 
+kann durch Überwindung der herkömmlichen Synchronisierung der Generationen:
+Die Beute-Individuen werden auf einem räumlichen Gitter angeordnet, auf dem 
+die Räuber umherirren und gemäß je eigenem Teilziel lokale Selektion betreiben. 
+Die entstehenden Lücken in der Beute-Population werden durch die üblichen 
+Reproduktionsmechanismen mit Nachkommen der überlebenden Individuen wieder 
+aufgefüllt.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+rangbasierte Selektion<A NAME="ran">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>auch Ranking-Selektion, basierend auf der nach 
+<A HREF="node25.html#zie">Zielfunktion</A>swerten  
+geordneten Rangliste 
+der Population erfolgt die Zuweisung der Selektionswahrscheinlichkeiten als 
+Funktion des Rangplatzes</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>&nbsp;</TD>
+</TR>
+</TABLE>
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+reellwertiger GA<A NAME="ree">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>GA zum Optimieren in reellwertigen Suchräumen, im Gegensatz zum kanonischen GA 
+(<A HREF="node10.html#GA">GA</A>) 
+besteht das Genom aus den (reellen) 
+<A HREF="node17.html#obj">Objektparametern</A>, 
+d.h. es wird in der 
+natürlichen Problemrepräsentation evolviert. Der r.&nbsp;GA verwendet spezielle 
+Rekombinationsoperatoren, die Hybride aus 
+<A HREF="node12.html#int">intermediärer Rekombination</A> 
+(i.d.R. <IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\rho=2$">)
+und 
+<A HREF="node15.html#mut">Mutation</A>
+darstellen; er kann 
+<A HREF="node21.html#selb">selbstadaptives Verhalten</A> 
+zeigen.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+regionales Populationsmodell<A NAME="reg">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>auch Migrationsmodell, Inselmodell, <EM> coarse grained model</EM>.
+Die Population wird in 
+<A HREF="node23.html#unt">Unterpopulationen</A>  
+aufgeteilt. Der
+<A HREF="node21.html#selekt">Selektionspool</A> 
+umfaßt alle Individuen einer Unterpopulation.
+Nur Individuen aus einer Unterpopulation können miteinander
+Nachkommen bilden. Von Zeit zu Zeit findet ein Austausch von
+Information (Individuen) zwischen den Unterpopulationen 
+durch 
+<A HREF="node15.html#mig">Migration</A> 
+statt.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Rekombination<A NAME="rek">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>Variationsoperator, der die genetische Information zweier oder mehrerer 
+Elternindividuen mischt und ein oder mehrere Individuen, die sogenannten 
+Rekombinanten, produziert. In GA werden - dem biologischen Vorbild 
+entsprechend - i.d.R. jeweils zwei Rekombinanten durch 
+<A HREF="node6.html#cro">Crossover</A> 
+von 
+zwei Eltern generiert. In der ES finden 
+<A HREF="node12.html#int">intermediäre</A> 
+und 
+<A HREF="node7.html#dis">diskrete</A> 
+Rekombination Verwendung.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Replikation<A NAME="rep">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>Kopieren eines selektierten Individuums</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>&nbsp;</TD>
+</TR>
+</TABLE>
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Repräsentation<A NAME="repr">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>auch Codierung oder Problemrepräsentation, Abbildung des
+Optimierungsproblems auf der Ebene des Genoms. Man unterscheidet
+problemspezifische (auch ,,natürliche``) R. und problem<EM> un</EM>abhängige
+R. Bei der Parameteroptimierung sind bei der problemspezifischen R.
+<A HREF="node10.html#genot">Genotyp</A> 
+und 
+<A HREF="node18.html#pha">Phänotyp</A> 
+identisch, 
+während die natürliche R. bei der
+kombinatorischen oder der Strukturoptimierung zumeist nicht eindeutig
+(definierbar) ist. Der kanonische GA arbeitet typischerweise mit 
+problemunabhängiger R., d.h. alle Suchräume werden auf die Menge der
+Bitketten abgebildet (Beispiel: Binär- oder Graycode zur Codierung
+von Zahlen). Sofern jede Eigenschaft des Phänotyps im Genotyp
+eindeutig repräsentiert ist, spricht man von <EM> direkter</EM>,
+andernfalls von <EM> in</EM>direkter Codierung; haben Teile des Genotyps
+keinen Einfluß auf den Phänotyp, spricht man von <EM> redundanter</EM>
+Codierung.</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=142><P>
+Roulett-Selektion<A NAME="rou">&#160;</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=283>randomisierte Variante der 
+<A HREF="node9.html#fitne">fitness-proportionalen Selektion</A>
+<P></TD>
+</TR>
+</TABLE>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html295"
+ HREF="node21.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="http://www.cs.uni-dortmund.de/icons/l2h98.1p1//next_motif.gif"></A> 
+<A NAME="tex2html293"
+ HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="http://www.cs.uni-dortmund.de/icons/l2h98.1p1//up_motif.gif"></A> 
+<A NAME="tex2html287"
+ HREF="node19.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="http://www.cs.uni-dortmund.de/icons/l2h98.1p1//previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html296"
+ HREF="node21.html">S</A>
+<B> Up:</B> <A NAME="tex2html294"
+ HREF="node3.html">Begriffe und Definitionen</A>
+<B> Previous:</B> <A NAME="tex2html288"
+ HREF="node19.html">Q</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Hans-Georg Beyer</I>
+<BR><I>2001-06-13</I>
+</ADDRESS>
+</BODY>
+</HTML>
