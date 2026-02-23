@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-  <title>Recent Talks and Tutorials</title>
+  <title>Recent Talks</title>
   <meta content="Hans-Georg Beyer" name="author">
   <meta http-equiv="content-type"
  content="text/html; charset=ISO-8859-1">
@@ -99,7 +99,7 @@ Dr. rer. nat. habil. Hans-Georg Beyer</h2>
         </tbody>
       </table>
       <hr noshade="noshade" size="1">
-      <h1 style="text-align: center;">Recent Talks and Tutorials<br>
+      <h1 style="text-align: center;">Recent Talks<br>
       </h1>
 
 <h2>1. Evolution Strategies are Not Gradient Followers</h2>
@@ -116,12 +116,13 @@ next local attractor. The slides of that talk can
 be obtained <a href="downloads/ES-Is-Not-Gradient-Follower.pdf">here.</a><br> 
 BTW, even the consideration of ESs as Monte-Carlo approximators of the 
 so-called natural gradient does not hold for standard ESs such as the 
-Covariance Matrix Adapation ES. A discussion of that topic can be found in my paper 
+Covariance Matrix Adaptation ES. A discussion of that topic can be found in my paper 
 <a href="New-Papers/ECJ-Bey13-2020-revision.pdf">Convergence Analysis of Evolutionary Algorithms
 That are Based on the Paradigm of Information Geometry</a>. While the main 
 part of that paper is rather technical, the Introduction and the Conclusions
 should be easy to follow.<br>
-
+      <br>
+      <br>
 
 <h2>2. Design Principles for Matrix Adaptation Evolution Strategies</h2>
 
@@ -135,10 +136,71 @@ high-dimensional search spaces and constrained optimization problems.
 discussing these topics. <br>
 Matlab/Octave code of the basic algorithms can be found at 
 <a href="downloads.html">Downloads</a>
+      <br>      <br>
+      <br>
+
+<section id="aaboh">
+ <h2>3. Invited Talk at GECCO 2025: <br>
+ <a href="http://evolutionary-computation.com/New-Papers/Invited_Talk_GECCO25_With_Animations.pdf">
+        It is Time for a Revision of COCO BBOB (pdf)</a></h2>
+        
+This talk held in Malaga, Spain, at the GECCO 2025 
+<a href="https://aaboh.nl/gecco-25-workshop/">AABOH Workshop</a>
+on July 14th, 2025, takes a critical look at the 
+well-established 
+<a href="https://numbbo.github.io/coco/testsuites/bbob">COCO BBOB</a>
+benchmark suite. <br>
+After a short recap of the ideas behind ECDF plots (empirical cumulative 
+distribution function) a couple of weaknesses of the COCO BBOB design are 
+discussed:
+<ul>
+<li> The function value targets between 10<sup>-6</sup> and 10<sup>-8</sup></li>   are far too precise for real-world applications. These only reflect the local convergence behavior of the algorithms evaluated. 
+<li> Aggregating function value targets of different test functions in a single ECDF plot is scientific nonsense.</li>
+<li> The transformations used to generate different instantiations of the test functions favor CMA-ES like algorithms.</li>
+<li> The 24 test functions used need a renovation in order to reflect the developments of the last 15 years.</li>
+</ul>
+
+Regarding the last item of this bullet list, I've proposed a couple of 
+simple, scale- and tunable, but challenging test functions that appear hard for 
+CMA-ES like algorithms (and others). These are HappyCat-, HGBat-, ThreeButton-, 
+and the Audi-function. The peculiarity of these functions is that (except for 
+Audi) they have only one local minimum (being also the global one). In 2D one 
+can easily locate the global minimizer visually. Yet, it is 
+difficult for the algorithms to get close to the global minimizer.
+<br><br>
+For example, in the case of ThreeButton it takes the CMA-ES very long to  
+get to the minimizer even in the case of a rather weak 2D version of 
+this function. This can be seen in this 
+<a href="http://evolutionary-computation.com/New-Papers/mp4/TB-2-b2.mp4">mp4-video</a> 
+where the offspring population (pink dots) is displayed in the search space 
+along with the 
+contour lines of the ThreeButton function. Unlike most of the functions in the 
+BBOB test suite where the CMA-ES has to learn the covariance matrix ones, in 
+the case of ThreeButton it has to <em> permanently learn and re-learn</em> 
+this matrix (note, in order to shorten the video, some generation intervals of 
+the evolution process were skipped). 
+<br> <br>
+In the slides of this talk additional videos have been linked to show the 
+evolution of the population in the HappyCat and HGBat landscape for 2D and 
+10D instances. For the 
+higher-dimensional case a visualization trick has been invented to display the 
+exploratory behavior of the offspring population. To this end, those two 
+dimensions of the parent centroid that are most far apart from the minimizer 
+are determined. These two dimensions (that can change from generation to 
+generation) are used to display the offspring individuals. As an example, see the 
+(simple) 
+<a href="http://evolutionary-computation.com/New-Papers/mp4/hgbat-10-b1.mp4">10D HGBat case with &beta;=1.</a> 
+<br><br>
+When thinking about scaleable test functions in a renovated BBOB test suite also
+examples from physics come into mind. Some of them are discussed in this talk:
+Thomson's and Tammes' problem as well as the Lennard-Jones energy minimization.
+All these problems are well-suited for large-scale optimization benchmarking.
+
+</section>
+
       <br>
       <br>
-      <br>
-last change: 14.07.2020<br>
+last change: 22.02.2026<br>
       </td>
     </tr>
   </tbody>
